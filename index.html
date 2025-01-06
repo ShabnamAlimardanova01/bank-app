@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bank App</title>
+  </head>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(45deg, #ff6b6b, #f8a5a5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.card-container {
+  perspective: 1500px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.card-header {
+  background-color: #ff6b6b;
+  padding: 20px;
+  border-radius: 20px 20px 0 0;
+  text-align: center;
+}
+
+.card-header h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.card-header p {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.card-body {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 0 0 20px 20px;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ff6b6b;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  background-color: #fdfdfd;
+  transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus {
+  border-color: #f8a5a5;
+  outline: none;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul li {
+  background-color: #ff6b6b;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  font-size: 14px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+ /* Responsive Design */
+ @media (max-width: 768px) {
+    .card {
+      max-width: 90%;
+      padding: 15px;
+    }
+
+    .card-header h1 {
+      font-size: 20px;
+    }
+
+    .card-header p {
+      font-size: 16px;
+    }
+
+    .section h2 {
+      font-size: 18px;
+    }
+
+    input[type="number"], .btn {
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card {
+      max-width: 95%;
+    }
+
+    .card-header h1 {
+      font-size: 18px;
+    }
+
+    .card-header p {
+      font-size: 14px;
+    }
+
+    .section h2 {
+      font-size: 16px;
+    }
+
+    input[type="number"], .btn {
+      font-size: 12px;
+      padding: 8px;
+    }
+
+    ul li {
+      font-size: 12px;
+    }
+  }
+
+  </style>
+  <body>
+    <div class="main-container">
+      <div class="card-container">
+        <div class="card">
+          <div class="card-header">
+            <h1>My Bank</h1>
+            <p>Balance: <span id="balance">$0.00</span></p>
+          </div>
+
+          <div class="card-body">
+            <!-- Deposit Section -->
+            <div class="section" id="deposit-section">
+              <h2>Deposit</h2>
+              <input type="number" id="deposit-amount" placeholder="Enter amount" />
+              <button id="btn-deposit" class="btn">Deposit</button>
+            </div>
+
+            <!-- Withdraw Section -->
+            <div class="section" id="withdraw-section">
+              <h2>Withdraw</h2>
+              <input type="number" id="withdraw-amount" placeholder="Enter amount" />
+              <button id="btn-withdraw" class="btn">Withdraw</button>
+            </div>
+ 
+            <!-- History Section -->
+            <div class="section" id="history-section">
+              <h2>Transaction History</h2>
+              <ul id="transaction-history">
+    
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
